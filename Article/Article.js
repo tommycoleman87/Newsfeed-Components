@@ -45,5 +45,35 @@ class Article {
 
 */
 
+const mainArticle = document.querySelector('.articles');
+const submitBtn = document.querySelector('.submitArticle');
+
+submitBtn.addEventListener('click', () => {
+var div = document.createElement('div');
+var header = document.createElement('h2');
+var para = document.createElement('p');
+var closeSpan = document.createElement('span');
+var openSpan = document.createElement('span');
+openSpan.classList.add('expandButton');
+openSpan.textContent = 'Expand';
+closeSpan.classList.add('readButton');
+headerText = document.querySelector('.newArticleTitle');
+header.textContent = headerText.value;
+paraText = document.querySelector('.newArticle');
+para.textContent = paraText.value;
+div.classList.add('article');
+div.appendChild(header);
+div.appendChild(para);
+div.appendChild(closeSpan);
+div.appendChild(openSpan);
+div = new Article(div);
+mainArticle.appendChild(div);
+console.log('submit');
+modal.style.display = "none";
+event.preventDefault();
+
+
+})
+
 const articles = document.querySelectorAll('.article');
 articles.forEach(article => new Article(article));
