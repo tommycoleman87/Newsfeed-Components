@@ -43,42 +43,20 @@
 
 - With your selection in place, now chain .forEach() on to the articles variable to iterate over the articles NodeList and create a new instance of Article by passing in each article as a parameter to the Article class.
 
-*/
+*/ 
 
 //const mainArticle = document.querySelector('.articles');
-//const submitBtn = document.querySelector('.submitArticle');
-
-/*submitBtn.addEventListener('click', () => {
-var div = document.createElement('div');
-var header = document.createElement('h2');
-var para = document.createElement('p');
-var closeSpan = document.createElement('span');
-var openSpan = document.createElement('span');
-
-
-openSpan.classList.add('expandButton');
-openSpan.textContent = 'Expand';
-closeSpan.classList.add('readButton');
-closeSpan.textContent = 'Close';
-headerText = document.querySelector('.newArticleTitle');
-header.textContent = headerText.value;
-paraText = document.querySelector('.newArticle');
-para.textContent = paraText.value;
-div.classList.add('article');
-
-div.appendChild(header);
-div.appendChild(para);
-div.appendChild(closeSpan);
-div.appendChild(openSpan);
-
-mainArticle.appendChild(div);
-div = new Article(div);
-console.log('submit');
-modal.style.display = "none";
+const submitBtn = document.querySelector('.submitArticle');
+submitBtn.addEventListener('click', () => {
 event.preventDefault();
+const headerText = document.querySelector('.newArticleTitle');
+const paraText = document.querySelector('.newArticle')
+articleContainer.appendChild(article(headerText.value, new Date(), [paraText.value]))
+modal.style.display = "none";
 
 
-})*/
+
+})
 
 //const articles = document.querySelectorAll('.article');
 //articles.forEach(article => new Article(article));
